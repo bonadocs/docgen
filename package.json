@@ -1,6 +1,6 @@
 {
-  "name": "bonadocs-docgen",
-  "version": "1.0.0-alpha.1",
+  "name": "@bonadocs/docgen",
+  "version": "1.0.0-alpha.2",
   "description": "Interactive documentation generator for solidity smart contracts",
   "main": "build/main/index.js",
   "typings": "build/main/index.d.ts",
@@ -42,7 +42,7 @@
     "prepare-release": "run-s reset-hard test cov:check doc:html version doc:publish"
   },
   "dependencies": {
-    "@bonadocs/core": "^1.0.0-alpha.4",
+    "@bonadocs/core": "^1.0.0-alpha.1",
     "shelljs": "^0.8.5",
     "solidity-ast": "^0.4.55",
     "solidity-docgen": "^0.6.0-beta.36"

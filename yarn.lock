@@ -218,10 +218,10 @@
     "@babel/helper-validator-identifier" "^7.22.20"
     to-fast-properties "^2.0.0"
 
-"@bonadocs/core@^1.0.0-alpha.4":
-  version "1.0.0-alpha.4"
-  resolved "https://npm.pkg.github.com/download/@bonadocs/core/1.0.0-alpha.4/3f76e8f602608c619253ce1c2cd79a87636541b7#3f76e8f602608c619253ce1c2cd79a87636541b7"
-  integrity sha512-V9VR+2WWRV02KDD0mkNjwIloStVu9NaeIYsmeFmq1kg8Bs9Xy4nQmMVNTynB973Xxbc6ZwaiutUXqXgFemz8Kw==
+"@bonadocs/core@^1.0.0-alpha.1":
+  version "1.0.0-alpha.1"
+  resolved "https://registry.yarnpkg.com/@bonadocs/core/-/core-1.0.0-alpha.1.tgz#c0f5a95a68352d17919e234da393350994c8f160"
+  integrity sha512-89KgyvS77UowoQnOiqGiQ+OcTE/VIGeoXumVh5AquF9i18ZptDZnyhaJ4nhkv77MrYwXGi7KxBUiZV6C6tPTDw==
   dependencies:
     axios "^1.6.2"
     ethers "^6.9.0"
@@ -3371,9 +3371,9 @@ electron-fetch@^1.7.2:
     encoding "^0.1.13"
 
 electron-to-chromium@^1.4.601:
-  version "1.4.621"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.621.tgz#ccd523ed94373548dd913e0aa63601afac9d24f3"
-  integrity sha512-MGJM6S0MuF/wTzM9NoItWXN56J1kolrHS/vzl/KlhXAbVkogTy0wzKYliQDJgNypxSCFjxdRhHYS3bffyYUGEw==
+  version "1.4.622"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.622.tgz#925d8b2264abbcbe264a9a6290d97b9e5a1af205"
+  integrity sha512-GZ47DEy0Gm2Z8RVG092CkFvX7SdotG57c4YZOe8W8qD4rOmk3plgeNmiLVRHP/Liqj1wRiY3uUUod9vb9hnxZA==
 
 elliptic@6.5.4, elliptic@^6.5.2, elliptic@^6.5.4:
   version "6.5.4"
