@@ -1,6 +1,6 @@
 {
   "name": "@bonadocs/docgen",
-  "version": "1.0.0-alpha.2",
+  "version": "1.0.1",
   "description": "Interactive documentation generator for solidity smart contracts",
   "main": "build/main/index.js",
   "typings": "build/main/index.d.ts",
