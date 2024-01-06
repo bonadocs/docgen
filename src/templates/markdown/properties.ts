@@ -8,9 +8,7 @@ export function widget({ item, contract }: DocItemContext): string | undefined {
   }
 
   if (!contract) {
-    throw new Error(
-      `FunctionDefinition Node ${item.name} (${item.id}) has no contract in context`,
-    )
+    return
   }
 
   const widget = getWidget()

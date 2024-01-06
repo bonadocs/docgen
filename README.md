@@ -72,7 +72,7 @@ export default {
 };
 ```
 
-Then run with `hardhat docgen`.
+Then run with `npx hardhat docgen`.
 
 ### As a library
 
