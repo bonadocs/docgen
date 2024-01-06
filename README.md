@@ -32,7 +32,7 @@ Refer to the configuration below__
 
 ## Usage
 
-Install `bonadocs-docgen` from npm.
+Install `@bonadocs/docgen` from npm.
 
 ### Hardhat
 
@@ -40,7 +40,7 @@ Include the plugin in your Hardhat configuration.
 
 ```diff
  // hardhat.config.ts
-+import 'bonadocs-docgen';
++import '@bonadocs/docgen';
 
 export default {
 +  docgen: {
@@ -77,7 +77,7 @@ Then run with `hardhat docgen`.
 ### As a library
 
 ```typescript
-import { docgen } from 'bonadocs-docgen';
+import { docgen } from '@bonadocs/docgen';
 
 abis = [
   {
