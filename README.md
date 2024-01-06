@@ -1,18 +1,34 @@
-# `bonadocs-docgen`
+# `@bonadocs/docgen`
 
-*bonadocs-docgen is a program that extracts documentation for a Solidity project and generates an
-interactive website from it using Docusaurus.*
+__docgen is a program that extracts documentation for a Solidity project and generates an
+interactive website from it using Docusaurus.__
 
-`bonadocs-docgen` is based on `solidity-docgen`.
+`@bonadocs/docgen` is based on `solidity-docgen`. If you already use `solidity-docgen`, you
+already know how to use `@bonadocs/docgen`. Hmmm, maybe 90% of it. The two main differences are:
 
-The tool will generate a static site using Docusaurus by default. This can be turned off by setting the
-`website.generate` option to `false` in the configuration.
+- `@bonadocs/docgen` generates a website using Docusaurus, while `solidity-docgen` only generates
+  Markdown files. You can turn off the website generation if you want to use a different static site
+  generator and only markdown files will be generated, much like `solidity-docgen`. If you would like
+  to use include widgets that make your documentation interactive, then this is a great option.
+- `@bonadocs/docgen` generates widgets for deployed contracts, so developers can interact with the
+  contracts directly from the documentation website. This is better than sending them off to Etherscan
+  or worse, having them write their own scripts to interact with the contracts.
 
-The output is fully configurable through Handlebars templates, but the default templates should do
-a good job of displaying all of the information in the source code in Markdown format. If you don't
+The markdown output is fully configurable through Handlebars templates, but the default templates should
+do a good job of displaying all of the information in the source code in Markdown format. If you don't
 want to generate a website, the generated Markdown files can be used with a static site generator 
 such as Docusaurus, Vuepress, MkDocs, Jekyll (GitHub Pages), etc., in order to publish a documentation
 website.
+
+## Widget?
+
+The widgets are interactive components that allow users to interact with the contracts directly from
+the documentation website. Widgets run simulations by default and enable developers to test without
+paying gas fees. Developers love to learn by doing, and this is the perfect way to let them do just that.
+The widgets are generated using [`@bonadocs/widget`](https://github.com/bonadocs/widget).
+
+__Note: widgets will only be generated for contracts with their deployment addresses specified.
+Refer to the configuration below__
 
 ## Usage
 
