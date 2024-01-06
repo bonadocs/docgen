@@ -31,6 +31,13 @@ export type WebsiteConfig = {
    * under (Required if `configureGitHubPages` is true)
    */
   docsGitHubRepo?: string
+
+  /**
+   * The template to use for the documentation website (Optional). Defaults to
+   * `js`. Use `ts` if you want to use TypeScript. You can also provide a git
+   * URL to a custom template.
+   */
+  template?: string
 }
 
 export type UserConfig = {
@@ -144,5 +151,6 @@ export const defaults: Omit<FullConfig, 'templates' | 'deploymentAddresses'> = {
   website: {
     generate: true,
     configureGitHubPages: false,
+    template: 'js',
   },
 }

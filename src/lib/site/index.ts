@@ -16,15 +16,14 @@ import { generateDocIndexPage } from './pageUpdates'
  */
 export async function generateWebsite(config: Config, docsDir: string) {
   const siteDir = path.resolve(config.outputDir!)
-  await cloneStarterTemplate(siteDir)
+  const templateRepo = getTemplateRepo(config)
+  await cloneStarterTemplate(templateRepo, siteDir)
   await moveContractsToSiteDir(docsDir, siteDir)
   await generateDocIndexPage(config, siteDir)
   await addDocusaurusConfig(config, siteDir)
 }
 
-async function cloneStarterTemplate(siteDir: string) {
-  const templateUrl = 'https://github.com/bonadocs/docusaurus-template.git'
-
+async function cloneStarterTemplate(templateUrl: string, siteDir: string) {
   if (
     shell.test('-d', siteDir) &&
     shell.test('-e', `${siteDir}/docusaurus.config.js`)
@@ -36,6 +35,27 @@ async function cloneStarterTemplate(siteDir: string) {
 
   // ensure the contracts directory exists
   shell.mkdir('-p', `${siteDir}/docs/contracts`)
+}
+
+function getTemplateRepo(config: Config) {
+  if (!config.website?.template) {
+    throw new Error('No website template specified')
+  }
+
+  switch (config.website.template) {
+    case 'js':
+    case 'ts':
+      return `https://github.com/bonadocs/docgen-template-${config.website.template}.git`
+  }
+
+  try {
+    new URL(config.website.template)
+    return config.website.template
+  } catch {
+    throw new Error(
+      `Invalid website template: ${config.website.template}. Templates must be a URL or one of 'js' or 'ts'`,
+    )
+  }
 }
 
 async function moveContractsToSiteDir(docsDir: string, siteDir: string) {
