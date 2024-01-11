@@ -47,7 +47,7 @@ export default {
 +    projectName: 'Your Protocol Name', // optional, a placeholder name will be used if omitted
 +    projectDescription: 'An awesome web3 protocol.', // optional, a placeholder description will be used if omitted
 +    deploymentAddresses: { // optional. If you want to generate widgets for deployed contracts
-+      MyFirstContract: [
++      FirstContractName: [
 +        {
 +          chainId: 1, // mainnet
 +          address: '0x...',
@@ -57,7 +57,7 @@ export default {
 +          address: '0x...',
 +        },
 +      ],
-+      MySecondContract: [
++      SecondContractName: [
 +        {
 +          chainId: 1, // mainnet
 +          address: '0x...',
