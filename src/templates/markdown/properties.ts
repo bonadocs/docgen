@@ -16,5 +16,14 @@ export function widget({ item, contract }: DocItemContext): string | undefined {
     return
   }
 
+  if (
+    !item.implemented ||
+    item.kind !== 'function' ||
+    item.visibility === 'internal' ||
+    item.visibility === 'private'
+  ) {
+    return
+  }
+
   return `<BonadocsWidget widgetConfigUri="${widget.widgetUri}" contract="${contract.name}" functionKey="0x${item.functionSelector}" />`
 }
