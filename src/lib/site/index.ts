@@ -8,6 +8,8 @@ import { addDocusaurusConfig } from './docusaurus'
 import * as git from './git'
 import { generateDocIndexPage } from './pageUpdates'
 
+export { pageAssigner } from './page-assigner'
+
 /**
  * This function generates the website for the given configuration and copies
  * the generated docs from the docs directory to the website directory.

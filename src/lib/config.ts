@@ -1,5 +1,6 @@
 ﻿import type { PageAssigner } from 'solidity-docgen/dist/site'
 
+import { pageAssigner } from './site'
 import { Deployment } from './types'
 
 export type WebsiteConfig = {
@@ -141,7 +142,7 @@ export const defaults: Omit<FullConfig, 'templates' | 'deploymentAddresses'> = {
   root: process.cwd(),
   sourcesDir: 'contracts',
   outputDir: 'docs',
-  pages: 'items',
+  pages: pageAssigner,
   exclude: [],
   theme: 'markdown',
   collapseNewlines: true,
