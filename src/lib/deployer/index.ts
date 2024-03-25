@@ -70,8 +70,8 @@ function tagBytecode(bytecode: BytesLike): BytesLike {
   )
   const decoded = cbor.decodeAllSync(cborData.slice(2))
 
-  // hex encoded docgen version - 0.0.1
-  decoded[0].bonadocs = Buffer.from('000001', 'hex')
+  // fixed hex value - 0xB01AD0C5
+  decoded[0].bonadocs = Buffer.from('B01AD0C5', 'hex')
 
   const encodedCbor = '0x' + cbor.encode(decoded[0]).toString('hex')
   const encodedLength = ethersUtils.hexZeroPad(
