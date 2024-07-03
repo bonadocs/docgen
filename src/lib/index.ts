@@ -15,6 +15,7 @@ export async function main(
   abis?: ContractABI[],
 ): Promise<void> {
   config = { ...defaults, ...config }
+  config.website = { ...defaults.website, ...config.website }
   validateConfig(config)
 
   if (config.deploymentAddresses) {

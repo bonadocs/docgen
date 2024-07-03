@@ -1,9 +1,10 @@
 import * as path from 'path'
 
-import { extendConfig, task } from 'hardhat/config'
+import { extendConfig, extendEnvironment, task } from 'hardhat/config'
 import { BuildInfo } from 'hardhat/types'
 
 import './type-extensions'
+import { BonadocsTaggedFactory } from './deployer/factory'
 
 extendConfig((config) => {
   config.docgen ??= {}
@@ -12,6 +13,24 @@ extendConfig((config) => {
     .relative(config.paths.root, config.paths.sources)
     .split(path.sep)
     .join(path.posix.sep)
+})
+
+extendEnvironment((hre: any) => {
+  if (hre.ethers) {
+    hre.ethers = new Proxy(hre.ethers, {
+      get: function (target, prop) {
+        if (prop === 'getContractFactory') {
+          return (...args: unknown[]) => {
+            return target[prop](...args).then(
+              (factory: any) => new BonadocsTaggedFactory(factory),
+            )
+          }
+        } else {
+          return target[prop]
+        }
+      },
+    })
+  }
 })
 
 task('docgen', async (_, hre) => {
